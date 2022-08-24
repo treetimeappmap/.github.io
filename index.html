@@ -18,7 +18,20 @@ body {
 margin: 0;
 padding: 0;
 }
+.topnav {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  background-color: #3E9E57;
+  z-index: 1;
+}
+
+.topnav img {
+padding: 7px;
+}      
+ 
 #map {
+        z-index: 0;
 position: absolute;
 top: 0;
 bottom: 0;
@@ -45,6 +58,10 @@ font-family: 'Open Sans', sans-serif;
 </style>
 </head>
 <body>
+      
+<div class="topnav">
+  <img src="https://treetimeapp.com/wp-content/uploads/2020/09/cropped-faviconnew.png" alt="Trulli" width="50" height="33">
+</div>
 <div id="map"></div>
  
 <script>
