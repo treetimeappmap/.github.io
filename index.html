@@ -167,6 +167,7 @@ new mapboxgl.Popup({ offset: 25 }) // add popups
 )
 .addTo(map);
 }
+map.addControl(new mapboxgl.ScaleControl({position: 'bottom-left'}));
 map.addControl(new mapboxgl.NavigationControl(), 'bottom-left');
 </script>
 </body>
