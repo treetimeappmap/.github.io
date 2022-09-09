@@ -14,50 +14,94 @@ href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css"
 rel="stylesheet"
 />
 <style>
-body {
-margin: 0;
-padding: 0;
+@font-face {
+    font-family: newzald;  
+    src: url(https://treetimeapp.com/wp-content/uploads/2020/08/NewzaldTest-BlackItalic.otf);  
+    font-weight: normal;  
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .topnav {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  background-color: #3E9E57;
-  z-index: 1;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    background-color: #3E9E57;
+    z-index: 1;
 }
 
 .topnav img {
-padding: 7px;
-}      
+    padding: 15px;
+}
+
+.plant-now-container {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    border-radius: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 2);
+    background: #3E9E57;
+    z-index: 2;
+}
+
+.plant-now-container h1 {
+    font-family: newzald;
+    color: #fff;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.plant-now-container:hover {
+    background: #085e2f;
+}
  
 #map {
-        z-index: 0;
-position: absolute;
-top: 0;
-bottom: 0;
-width: 100%;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
 }
 .marker {
-background-image: url('https://treetimeapp.com/wp-content/uploads/2021/08/carbon_natives.png');
-background-size: cover;
-width: 50px;
-height: 50px;
-border-radius: 50%;
-cursor: pointer;
+    background-image: url('https://app.treetimeapp.com/assets/Bio-icon.svg');
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
 }
 .mapboxgl-popup {
-max-width: 200px;
+    max-width: 200px;
 }
 .mapboxgl-popup-content {
-      color: #F3F3DD;
-    background-color: #3E9E57;
+    color: #F3F3DD;
+    background-color: #085e2f;
     border-color: #91785D;
-text-align: center;
-font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-family: newzald; 
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    align-self: center;
+    border-bottom: none;
+    border-top-color: #085e2f;
+}
+
+a.mapboxgl-ctrl-logo,
+.mapboxgl-ctrl-attrib a{
+    display: none !important;
 }
   
 @media screen and (max-width: 500px){
-  .topnav {
+  .topnav,
+  .plant-now-container  {
     display: none;
   }
   }  
@@ -67,9 +111,17 @@ font-family: 'Open Sans', sans-serif;
 <body>
       
 <div class="topnav">
-  <img src="https://treetimeapp.com/wp-content/uploads/2020/09/cropped-faviconnew.png" alt="Trulli" width="50" height="33">
+  <img src="https://treetimeapp.com/wp-content/uploads/2020/09/logownpf-e1599634124630.png" alt="Trulli" width="100" height="30">
 </div>
+    <a href="https://checkout.stripe.com/pay/cs_test_b1VGRuGU8dLGLmxKKfyyxy5RFXRn3LqeKHwfhRQdySWmnaEPrCZvHCT6Fj#fidkdWxOYHwnPyd1blpxYHZxWjA0SWN9NGlEZkNCRHBgamN%2FNl9kTGlndX1JQEgxclVrRmFtMzdMbmhyZ1R8X1NpT3BtQn9BTzBdckhQaVBucFJ9SlVXVzBvaE9mQ1B0Q11SYTM2QEhVTXdsNTVLNH1cQzVTSycpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVoxYnIzdH1kXW1ncVNiaGY0MTEnKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqcXdgYHFsaGBkdXUrZmpoKicpJ3V3YGlqZGFDamtxJz8nX2BrJUhkd3AlQmpxbWxmJ3gl" target="_blank">
+        <div class="plant-now-container">
+            <h1>Plant Now</h1>
+        </div>
+    </a>
+
 <div id="map"></div>
+
+</div>
  
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoidHJlZXRpbWUiLCJhIjoiY2w3NnR1ZXluMGJhbzNucDNycjRiM3cwMiJ9.7crLm7gnNpgGTKKr7owi1g';
